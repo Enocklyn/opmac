@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+
+    <link th:href="@{/css/SideBar.css}" rel="stylesheet">
+  <link th:rel="stylesheet" type="text/css" th:href="@{/css/datatables.css}"/>
+        <link th:rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.css}"/>
+        <link rel="stylesheet" th:href="@{/css/fontawesome.min.css}">
+        <link rel="stylesheet" th:href="@{/css/fontawesome.css}">
+      <link rel="stylesheet" type="text/css" th:href="@{/css/datatables.css}"/>
+  
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+       
+       <div th:replace= "topBar::TopBarContestant"></div>
+      
+   <div class="row">
+       
+      <div class="col-sm-2 col-3">
+           <div th:replace= "SideNav::sideNavContestantPortal"></div>
+     
+          </div>
+          <div class ="col-sm-10 col-8" style="margin-top:60px; ">
+ 
+     <div th:if="${ContestantChartDatas}">
+               <div th:replace="charts/category::chartsdata">
+                   
+               </div>
+          </div>
+               <div th:if="${ContestantChartData}">
+               <div th:replace="charts/category::chart">
+                   
+               </div>
+          </div>
+               <div th:if="${AllContestantsCategory}">
+          <div th:replace= "Contestant/VIEW::AllContestantsCategory"></div>
+          </div> 
+    </body>
+</html>

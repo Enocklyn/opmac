@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+   
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.3, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Trial</title>
+
+  <!-- Bootstrap core CSS -->
+  <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+
+    <link th:href="@{/css/SideBar.css}" rel="stylesheet">
+  <link th:rel="stylesheet" type="text/css" th:href="@{/css/datatables.css}"/>
+        <link th:rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.css}"/>
+        <link rel="stylesheet" th:href="@{/css/fontawesome.min.css}">
+        <link rel="stylesheet" th:href="@{/css/fontawesome.css}">
+       <link rel="stylesheet" type="text/css" th:href="@{/css/datatables.css}"/>
+
+  <!-- Custom styles for this template -->
+  
+</head>
+
+<body>
+
+  <!-- Navigation -->
+ 
+   <div th:replace= "topBar::TopNavigation"></div>
+      
+   <div class="row">
+       
+      <div class="col-sm-2 col-3">
+           <div th:replace= "SideNav::sideNavStudent"></div>
+     
+          </div>
+          <div class ="col-sm-10 col-8" style="margin-top:60px; ">
+       <div th:if="${event}">
+    <div th:replace="Event/ADD::event">
+       </div> 
+    </div>
+         <div th:if="${Events}">
+    <div th:replace="Event/VIEW::Events">
+       </div> 
+    </div>        
+              
+              
+       <div th:if="${msg}"  class=" alert alert-heading text-white bg-info"  style="margin-top:60px;">
+                  <p th:text="${msg}"></p>
+       </div> 
+       <div th:if="${dashboard}">
+    <div th:replace="Event/VIEW::dashboard">
+       </div> 
+    </div>  
+              //payments
+        <div th:if="${payments}">
+    <div th:replace="payment/VIEW::payments">
+       </div> 
+    </div>         
+  </div>
+      
+   </div>
+     </body>
+</html>

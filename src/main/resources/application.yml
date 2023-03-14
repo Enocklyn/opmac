@@ -1,0 +1,17 @@
+spring:
+  datasource:
+   
+    username: Enock
+    password: Sirlyns1234
+    url: jdbc:sqlserver://opmacserver.database.windows.net:1433;database=event;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
+   
+    database: 
+        name: event
+  jpa:
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.MySQL8Dialect
+  server:
+      port: 9191
+      #database=mydata;user=Enock@opmacserver;password={your_password_here}
+      #jdbc:sqlserver://opmacserver.database.windows.net:1433;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;

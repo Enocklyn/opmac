@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=0.5, shrink-to-fit=yes">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>SMS</title>
+
+        <!-- Bootstrap core CSS -->
+        <link th:href="@{/css/SideBar.css}" th:rel="stylesheet"/>
+        <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
+        <link th:href="@{/css/DataTables/jquery.dataTables.css}" rel="stylesheet" type="text/css"/>
+        <link th:href="@{/css/DataTables/jquery.dataTables.min.css}" rel="stylesheet" type="text/css"/>
+        <link th:href="@{/css/fontawesome.css}" rel="stylesheet}" type="text/css"/>
+        <link th:href="@{/css/DataTables/dataTables.foundation.min.css}" rel="stylesheet" type="text/css"/>
+        <link th:href="@{/css/DataTables/dataTables.jqueryui.css}" rel="stylesheet" type="text/css"/>
+
+        <link th:rel="stylesheet" type="text/css" th:href="@{/css/datatables.css}"/>
+        <link th:rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.css}"/>
+        <link th:href="@{/css/bootstrap.min_1.css}" rel="stylesheet" type="text/css"/>
+        <link th:href="@{/css/owl.carousel.css}" rel="stylesheet" type="text/css"/>
+        <link th:href="@{/css/fontawesome.css}" rel="stylesheet" type="text/css"/>
+        <link th:href="@{/css/fontawesome.min.css}" rel="stylesheet" type="text/css"/>
+    </head>
+
+    <body  style="font-family:sans-serif; " class="bg-light">
+     <div class="row">
+         <div class="col-12">
+             <div th:replace= "topBar::TopBarUser"></div>
+              <div th:if="${msg}"  class=" alert alert-heading text-white bg-info"  style="margin-top:60px;">
+                  <p th:text="${msg}"></p>
+       </div> 
+               <div th:if="${newVoter}">
+                <div th:replace="Voter/ADD::newVoter">
+       
+               
+               
+               </div></div>
+               </div></div>   
+
+</body>
+
+
+
+
+
+
+
+</html>

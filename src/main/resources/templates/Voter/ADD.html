@@ -1,0 +1,63 @@
+
+<div th:fragment="newVoter"> 
+   
+            <div class="offset-5">
+    
+    <form th:method="post" id="form" th:action="@{/saveVoter}" th:object="${newVoter}" 
+          style="margin-top: 20px;  " enctype="multipart/form-data">
+    
+                
+                 <div class="row ">
+                    
+                    <div class="  jumbotron  shadow text-white bg-dark" >
+                    
+                        <div class="form-group ">
+       
+                          <label for="text">Phone Number*</label>
+                            <input type="text" class="form-control" th:field="*{phoneNumber}" required="true">
+                       
+                        </div>
+                            <div class="form-group ">
+                                <label for="inputAddress">Contestant code*</label>
+                                <input type="text" class="form-control" id="code"  name="code" required="true">
+                            </div>
+                         <div class="form-group ">
+                                <label for="inputAddress">Number of votes*</label>
+                               <input type="text" class="form-control"  th:field="*{numberOfVotes}" required="true">
+                            </div>
+                         <div class="row">
+                    <div class="col-4"> 
+                        <input type="submit" class="btn  btn-success" value="Next" id="upload_btn" th:onclick="spinOnload()" >
+
+                     </div>
+                      </div>    
+
+
+                    <button  class="btn btn-primary d-none" id="loading_btn" type="button">
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        Uploading.................
+                    </button>
+
+             
+                <button class="btn btn-secondary d-none" id="cancel_btn" type="button">Cancel Button</button>
+
+                  </div></div>
+              
+
+         
+
+
+
+    </form>
+</div>   
+   
+   
+   
+   
+   </div>
+    
+<script th:src="@{/javascript/datatables.js}" type="text/javascript"></script>
+<script th:src="@{/javascript/ProgressDialog_1.js}" type="text/javascript"></script>
+<script th:src="@{/javascript/bootstrap.min.js}" type="text/javascript"></script>
+
+</div>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<div th:fragment="sideNav">
+<div class="container" >
+
+            <div class="row "style="margin-top: 120px;">
+
+                <div class="col-3  ">
+                    <div class="sidenav">
+                        <hr /><hr/><hr /><hr/>
+
+                        <a th:href="@{/AddStudentForm}" class="nav-link text-white" >PROFILE</a>
+                     <hr />
+                        <a th:href="@{/ViewAllRequest}" class="nav-link text-white" >SEARCH EVENT</a>
+                        <hr />
+                          <a th:href="@{/DepartmentForm}" class="nav-link text-white" >ADD DEPARTMENT</a>
+                          
+                        <hr />
+                         <a th:href="@{/allDepartments}" class="nav-link text-white" >ALL DEPARTMENTS</a>
+                          
+                        <hr />
+                         <a th:href="@{/ShowAddUserForm}" class="nav-link text-white" >ADD USER</a>
+                          
+                        <hr />
+                    
+                        
+                    </div>
+                </div></div></div></div>
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<div th:fragment="sideNavStudent">
+<div class="container" >
+
+            <div class="row "style="margin-top: 120px;">
+
+                <div class="col-3">
+                    <div class="sidenav bg-success" >
+                        <hr /><hr/><hr /><hr/>
+
+                        <a th:href="@{/AddStudentForm}" class="nav-link text-white" >PROFILE</a>
+                     <hr />
+                        <a th:href="@{/ViewAllRequest/{departmentId}(departmentId=${departmentId})}"
+                           class="nav-link text-white" >SEARCH EVENT</a>
+                         <hr />
+                        <a th:href="@{/Admin/ShowEventForm}" class="nav-link text-white" >ADD EVENT</a>
+                       
+                         <hr />
+                        <a th:href="@{/Admin/getAllEvents/}" class="nav-link text-white" >EVENTS</a>
+                        <hr />
+                        <a th:href="@{/DownloadAssessment}" class="nav-link text-white" >CURRENT EVENT</a>
+                        <hr />
+                        <!---a th:href="@{/ViewAllRequest}" class="nav-link text-white" >ADD COMPANY</a--->
+                       
+                        
+                    </div>
+                </div></div></div></div>
+<div th:fragment="sideNavContestant">
+<div class="container" >
+ <div class="sidenav bg-success">
+                        <hr /><hr/><hr /><hr/>
+
+                        <a th:href="@{/Admin/addContestantForm/{contestantId}(contestantId=${ContestantEvent.id})}" 
+                           class="nav-link text-white fa-solid fa-ad" >Add Contestant</a>
+                     <hr />
+                            <a th:href="@{/Admin/GetContestantBasedOnEvent/{eventid}(eventid=${ContestantEvent.id})}"
+                               class="nav-link text-white fa-solid fa-user" >All Contestants</a>
+                          
+                        <hr />
+                          <hr />
+                            <a th:href="@{/Admin/showCategoryForm/{eventid}
+                               (eventid=${ContestantEvent.id})}"
+                               class="nav-link text-white fa-solid fa-user" >Add Category</a>
+                          
+                
+                        <hr />
+                            <a th:href="@{/Admin/allCategory/{eventid}
+                               (eventid=${ContestantEvent.id})}"
+                               class="nav-link text-white fa-solid fa-user" >All Categories</a>
+                          
+                           
+                          <hr />
+                            <a th:href="@{/Admin/GetContestantBasedOnEventCategory/{eventid}
+                               (eventid=${ContestantEvent.id})}"
+                               class="nav-link text-white fa-solid fa-user" >More Details</a>
+ 
+                        <hr />
+                          <a th:href="@{/Admin/ShowAddUserForm/{eventid}
+                               (eventid=${ContestantEvent.id})}" class="nav-link text-white" >ADD USER</a>
+                      
+                       
+                       <div class="shadow h4" >
+                         <a th:href="@{/Admin/EventDetails/{eventId}(eventId=${ContestantEvent.id})}" class="nav-link " style="color:#000;font-family: Monotype Corsiva ">
+                           <p><span th:text="${ContestantEvent.eventName}"></span><span> 
+                               
+                               </span><span th:text="${ContestantEvent.location}"></span></p>  
+                      </a>
+                           </div>
+
+                        <hr/>
+                        
+                    </div>
+            
+</div>
+                    
+</div>
+<div th:fragment="sideNavContestantPortal">
+<div class="container" >
+ <div class="sidenav bg-success">
+                        <hr /><hr/><hr/>
+                            <a th:href="@{/Contestant/GetContestantBasedOnEventCategory}"
+                               class="nav-link text-white fa-solid fa-user" >More Details</a>
+                          
+                        <hr />
+                        
+                       <div class="shadow h4" >
+                         <a th:href="@{/Contestant/EventDetails}" class="nav-link " style="color:#000;font-family: Monotype Corsiva ">
+                           <p><span th:text="${ContestantEvent.eventName}"></span><span> 
+                               
+                               </span><span th:text="${ContestantEvent.location}"></span></p>  
+                      </a>
+                           </div>
+
+                        <hr/>
+                        
+                    </div>
+            
+</div></div>
+
+<div th:fragment="sideNavEventAdminPortal">
+<div class="container" >
+ <div class="sidenav bg-success">
+                        <hr /><hr/><hr/>
+                            <a th:href="@{/Contestant/GetContestantBasedOnEventCategory}"
+                               class="nav-link text-white fa-solid fa-user" >More Details</a>
+                          
+                        <hr />
+                         <a th:href="@{/Admin/GetContestantBasedOnEvent/{eventid}(eventid=${ContestantEvent.id})}"
+                               class="nav-link text-white fa-solid fa-user" >All Contestants</a>
+                          
+                        <hr />
+                        <a th:href="@{/Admin/GetContestantBasedOnEvent/{eventid}(eventid=${ContestantEvent.id})}"
+                               class="nav-link text-white fa-solid fa-user" >Add Contestant</a>
+                          
+                        <hr />
+                        
+                       <div class="shadow h4" >
+                         <a th:href="@{/Contestant/EventDetails}" class="nav-link " 
+                            style="color:#000;font-family: Monotype Corsiva ">
+                           <p><span th:text="${ContestantEvent.eventName}"></span><span> 
+                               
+                               </span><span th:text="${ContestantEvent.location}"></span></p>  
+                      </a>
+                           </div>
+
+                        <hr/>
+                        
+                    </div>
+            
+</div></div>
+

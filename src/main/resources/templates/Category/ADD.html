@@ -1,0 +1,65 @@
+
+  
+
+    <div th:fragment="newCartegory">
+   
+       <div class="row">
+                <div class="col-10  offset-1">
+
+        <form th:method="post" id="form" th:action="@{/Admin/saveCategory/}" th:object="${newCartegory}" 
+              style="margin-top: 20px;  " enctype="multipart/form-data">
+           <DIV>
+                     <lable CLASS="bg-light text-success text-center">Add Category</lable>
+                    <div class="row ">
+
+                        <div class=" col-8 jumbotron bg-dark shadow text-white"  >
+
+                            <div class="form-group ">
+
+                              <label for="text">Category Name*</label>
+                                <input type="text" class="form-control" th:field="*{categoryName}" required="true">
+                             <input type="hidden" class="form-control" th:field="*{event}" required="true">
+                          
+                            </div>
+                             <div class="row">
+                        <div class="col-2"> 
+                            <input type="submit" class="btn  btn-primary" value="SAVE" 
+                                   id="upload_btn" th:onclick="spinOnload()" >
+                            
+                         
+                         </div>
+                                 <div class="col-2">   <input type="submit" class="btn  btn-light text-black-50" value="ADD" 
+                                   id="upload_btn" th:onclick="spinOnload()" >
+ </div>
+                          </div>    
+
+
+                        <button  class="btn btn-primary d-none" id="loading_btn" type="button">
+                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                            Uploading.................
+                        </button>
+
+
+                    <button class="btn btn-secondary d-none" id="cancel_btn" type="button">Cancel Button</button>
+
+                        </div>         </div></div>
+
+
+
+
+
+
+        </form>
+    </div>   
+
+
+
+
+       </div>   
+    <script th:src="@{/javascript/datatables.js}" type="text/javascript"></script>
+    <script th:src="@{/javascript/ProgressDialog_1.js}" type="text/javascript"></script>
+    <script th:src="@{/javascript/bootstrap.min.js}" type="text/javascript"></script>
+
+    </div>
+
+   

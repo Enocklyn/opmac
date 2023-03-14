@@ -1,0 +1,57 @@
+  <div th:if="${user}"> 
+
+                    <div class="row">
+                        <div class="jumbotron bg-white" style="margin-top:20px; ">
+                            <div class="row  bg-light" style="margin-top:-50px; margin-bottom:5px; " >
+                                <label class="h3 offset-2 text-center" style="color:#004085;">sign up </label>
+                            </div>
+                            <form th:method="post" id="form" th:action="@{/addUser}" th:object="${user}"
+                                  class="form  table-bordered" style="margin-top: 10px;  " enctype="multipart/form-data">
+
+                                <div class="form-group col-12" style="margin-top:5px; ">
+                                    <label for="inputAddress">User Name</label>
+                                    <input type="text" class="form-control"  th:field="*{username}">
+                                </div>
+                                
+                                <div class="form-group col-12">
+                                    <label for="text">Select Role</label>
+                                    <select class="form-control" id="role" name="role" onchange="ShowTextField();">
+                                        <option th:each="role:${Uroles}" th:text="${role.name}" name="role" id="role" th:value="${role.id}" 
+                                                class="form-control" >
+                                    </select></div>
+                                
+                                <div class="form-group col-12 d-none" id="BusinessShops">
+                                    <label for="text">Assign Shop</label>
+                                    <select class="form-control" th:field="*{shop}">
+                                        <option th:each="Bs:${Businessshops}" th:text="${Bs.shopName}"  th:value="${Bs.shopId}" 
+                                                class="form-control" />
+                                    </select>
+                                </div>
+
+                                <div class="form-group col-lg-12" style="margin-top:5px; ">
+                                    <label for="inputAddress">Password </label>
+                                    <input type="password" class="form-control"  th:field="*{password}">
+                                </div>
+                                <div class="form-group col-12">
+                                    <input type="submit" class="btn btn-success fa-sign-in" value='Add User' id="upload_btn" th:onclick="spinOnload()">   
+                                </div>
+                                <button  class="btn btn-primary d-none" id="loading_btn" type="button">
+                                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                    Uploading.................
+                                </button>
+
+                            </form>
+<script>
+                                    function ShowTextField() {
+                                        if (document.getElementById("role").value == "Admin") {
+                                            document.getElementById("BusinessShops").classList.add("d-none");
+                                        }else{
+                                            
+                                            document.getElementById("BusinessShops").classList.remove("d-none");
+                                         }
+                                        
+                                    }
+                                </script>
+                        </div></div>
+
+                </div>
