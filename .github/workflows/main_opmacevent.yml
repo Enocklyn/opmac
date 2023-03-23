@@ -49,5 +49,5 @@ jobs:
         with:
           app-name: 'opmacevent'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BF1E14524F9645A6BF3E6212BD069FB8 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_301FD3F423E442E998C5302962E08B88 }}
           package: '*.jar'
